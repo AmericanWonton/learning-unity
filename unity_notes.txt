@@ -12,12 +12,12 @@ ALT + Rigth click is zoom in on selected object
 Right Click plus WASD makes you fly around
 
 
+CTRL + P goes in and out of "Play Mode"
+
+QWERT different keys selects the rotates, move, etc. commands
 
 
-
-
-
-
+/******************************  **********************************/
 
 
 
