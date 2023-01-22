@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     /* You can make these all public if you're debugging...but mostly, you keep them private */
     private float speed = 5.0f;
-    public float turnSpeed;
+    public float turnSpeed = 25.0f;
     public float horizontalInput;
     public float forwardInput;
 
