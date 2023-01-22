@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,6 @@ public class PlayerController : MonoBehaviour
         /* We want to not move our car frame by frame. We want to move the car forward in a time/speed frame
          * Move forward x amoutnt od distance over seconds
          */
-        transform.Translate(Vector3.forward * Time.deltaTime * 20);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }
