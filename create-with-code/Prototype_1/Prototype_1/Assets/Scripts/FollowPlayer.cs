@@ -13,11 +13,17 @@ public class FollowPlayer : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    //This is moved AFTER our camera is moved.
+    void LateUpdate()
     {
         /* You can look at where you started putting the camera to put it behind the player
          in a preffered position. */
         transform.position = Player.transform.position + cameraoffset;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
