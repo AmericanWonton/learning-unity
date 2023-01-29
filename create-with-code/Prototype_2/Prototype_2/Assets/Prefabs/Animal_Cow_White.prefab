@@ -1744,6 +1744,11 @@ GameObject:
   - component: {fileID: 6676198298009493866}
   - component: {fileID: 6676198298001889894}
   - component: {fileID: 6676198296739537135}
+  - component: {fileID: 5688307788298287682}
+  - component: {fileID: 1117865824}
+  - component: {fileID: 243786112}
+  - component: {fileID: 9064255792640939800}
+  - component: {fileID: 8959741325711677965}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Untagged
@@ -1800,6 +1805,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20.5
+--- !u!65 &5688307788298287682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676198298009442118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 33.09, z: 55.24}
+  m_Center: {x: 0, y: 16.12, z: 0}
+--- !u!114 &1117865824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676198298009442118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836130b6e4ce81a43965bb1a4b0a66bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &243786112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676198298009442118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836130b6e4ce81a43965bb1a4b0a66bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9064255792640939800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676198298009442118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eddffa4ead58d43ac01d87c4720082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8959741325711677965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676198298009442118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eddffa4ead58d43ac01d87c4720082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6676198298009442262
 GameObject:
   m_ObjectHideFlags: 0

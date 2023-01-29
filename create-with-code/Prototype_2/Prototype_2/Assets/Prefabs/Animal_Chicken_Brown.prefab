@@ -272,6 +272,11 @@ GameObject:
   - component: {fileID: 5759998778673339649}
   - component: {fileID: 5759998778666151199}
   - component: {fileID: 5759998779449960327}
+  - component: {fileID: 7457024006479442071}
+  - component: {fileID: 1191223671}
+  - component: {fileID: 531061054}
+  - component: {fileID: 2875767523594814537}
+  - component: {fileID: 5372615322272117080}
   m_Layer: 0
   m_Name: Animal_Chicken_Brown
   m_TagString: Untagged
@@ -335,6 +340,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5.6
+--- !u!65 &7457024006479442071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759998778673487069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.1, y: 21.02, z: 20.4}
+  m_Center: {x: 0, y: 7, z: 0}
+--- !u!114 &1191223671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759998778673487069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836130b6e4ce81a43965bb1a4b0a66bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &531061054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759998778673487069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836130b6e4ce81a43965bb1a4b0a66bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2875767523594814537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759998778673487069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eddffa4ead58d43ac01d87c4720082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5372615322272117080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759998778673487069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eddffa4ead58d43ac01d87c4720082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5759998778673490903
 GameObject:
   m_ObjectHideFlags: 0
