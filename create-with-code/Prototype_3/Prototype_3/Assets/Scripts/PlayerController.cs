@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody playerRB;
+    private Animator playerAnim;
     public float jumpForce;
     public float gravityModifier;
     public bool isOnGround = true;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
         /* This is shorthand for Physics.gravity = Physics.gravity * gravityModifier */
         Physics.gravity *= gravityModifier;
         //playerRB.AddForce(Vector3.up * 1000);
@@ -24,12 +26,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
          /* Check if the player is on the ground before letting them jump */
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && gameOver != true)
         {
             //Force Mode is a mode of which you add a force...in this case, it's a very quick force, immediatley
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             /* Had an issue, couldn't get this working... */
             isOnGround = false;
+            /* Used for jump animation */
+            playerAnim.SetTrigger("Jump_trig");
         }
 
         /*
@@ -50,6 +54,10 @@ public class PlayerController : MonoBehaviour
         } else if (collision.gameObject.CompareTag("Obstacle")) {
             gameOver = true;
             Debug.Log("Game Over!");
+            /* Trigger the death animation if the game is over... */
+            playerAnim.SetBool("Death_b", true);
+            playerAnim.SetInteger("DeathType_int", 1);
+
         } else
         {
             Debug.Log("FR, I dunno what you're colliding with....");
