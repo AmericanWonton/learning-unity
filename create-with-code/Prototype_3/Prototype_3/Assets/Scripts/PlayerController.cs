@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityModifier;
     public bool isOnGround = true;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
             //Force Mode is a mode of which you add a force...in this case, it's a very quick force, immediatley
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             /* Had an issue, couldn't get this working... */
-            //isOnGround = false;
+            isOnGround = false;
         }
 
         /*
@@ -40,9 +41,19 @@ public class PlayerController : MonoBehaviour
         */
     }
 
-    private void OnCollisonEnter (Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("DEBUG: Character has collided with somethign...");
-        isOnGround = true;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("DEBUG: Character has collided with somethign...");
+            isOnGround = true;
+        } else if (collision.gameObject.CompareTag("Obstacle")) {
+            gameOver = true;
+            Debug.Log("Game Over!");
+        } else
+        {
+            Debug.Log("FR, I dunno what you're colliding with....");
+        }
+        
     }
 }
