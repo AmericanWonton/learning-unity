@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRB;
     private Animator playerAnim;
+    public ParticleSystem dirtParticle;
+    public ParticleSystem explosionParticle;
+    private AudioSource playerAudio;
+    public AudioClip crashSound;
+    public AudioClip jumpSound;
     public float jumpForce;
     public float gravityModifier;
     public bool isOnGround = true;
@@ -17,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         /* This is shorthand for Physics.gravity = Physics.gravity * gravityModifier */
         Physics.gravity *= gravityModifier;
         //playerRB.AddForce(Vector3.up * 1000);
@@ -34,6 +40,11 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             /* Used for jump animation */
             playerAnim.SetTrigger("Jump_trig");
+            /* Used to stop the dirt particle when jumping */
+            dirtParticle.Stop();
+            /* Play the Audio when player collides with something */
+            playerAudio.PlayOneShot(jumpSound, 800.0f);
+            playerAudio.Play();
         }
 
         /*
@@ -51,13 +62,21 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("DEBUG: Character has collided with somethign...");
             isOnGround = true;
+            /* Plays the dirt particle if on the ground */
+            dirtParticle.Play();
         } else if (collision.gameObject.CompareTag("Obstacle")) {
             gameOver = true;
             Debug.Log("Game Over!");
+            /* Stops the dirt particle effect from playing */
+            dirtParticle.Stop();
             /* Trigger the death animation if the game is over... */
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
-
+            /* Trigger the particle effect for death */
+            explosionParticle.Play();
+            /* Play the crash sound when colliding */
+            Debug.Log("Can you hear us playing a crash?");
+            playerAudio.PlayOneShot(crashSound, 10.0f);
         } else
         {
             Debug.Log("FR, I dunno what you're colliding with....");
