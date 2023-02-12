@@ -21,5 +21,10 @@ public class Enemy : MonoBehaviour
         //The .normalize will 'normalize' the length of this vector...this makes 
         //The ball chase the player at normal speeds, no matter the distance
         enemyRb.AddForce(lookDirection * speed);
+        /* Check current position and destroy if object falls off  */
+        if (transform.position.y <= -20)
+        {
+            Destroy(gameObject);
+        }
     }
 }
