@@ -51,15 +51,23 @@ public class Target : MonoBehaviour
     /* Destroy obejct on mouse down */
     private void OnMouseDown() 
     {
-        Destroy(gameObject);
-        game_Manager.UpdateScore(pointValue);
-        Instantiate(explosionParticle, transform.position,explosionParticle.transform.rotation);
+        if (game_Manager.isGameActive == true)
+        {
+            Destroy(gameObject);
+            game_Manager.UpdateScore(pointValue);
+            Instantiate(explosionParticle, transform.position,explosionParticle.transform.rotation);
+        }
     }
 
     /* Destroys object when it leaves the scene. These will get caught by the Sensor below the scene */
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if (!gameObject.CompareTag("Bad"))
+        {
+            game_Manager.GameOver();
+        }
+        
     }
 
     /* These two functions happen so often in Unity, these are already methods.

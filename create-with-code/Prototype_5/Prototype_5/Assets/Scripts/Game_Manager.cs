@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
 {
+    public Button restartButton;
+    public bool isGameActive;
+    public TextMeshPro gameOverText;
     public TextMeshProUGUI scoreText;
     private int score = 0;
     private float spawnRate = 1.0f;
@@ -12,10 +17,12 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
         /* Display the Score */
         score = 0;
         UpdateScore(0);
         StartCoroutine(SpawnTarget());
+        //gameOverText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -24,10 +31,26 @@ public class Game_Manager : MonoBehaviour
         
     }
 
+    /* Creates condition for losing the game */
+    public void GameOver() 
+    {
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
+        /* Make button visible */
+        restartButton.gameObject.SetActive(true);
+    }
+
+    /* Restarts game when button is clicked */
+    public void RestartGame() 
+    {
+        /* This can reload the scene in Unity to play again */
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     /* Used to randomly spawn a target every few seconds */
     IEnumerator SpawnTarget()
     {
-        while (true)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
