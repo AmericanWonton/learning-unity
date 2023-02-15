@@ -1,0 +1,31 @@
+/******* Unity Notes ****************/
+
+
+/****** Good Key Combos **********/
+
+'F' focuses on the selected object.
+Right Mouse Button makes you looks around the scene view
+
+ALT+ Left click is dolly around on selected object
+ALT + Rigth click is zoom in on selected object
+
+Right Click plus WASD makes you fly around
+
+
+CTRL + P goes in and out of "Play Mode"
+
+QWERT different keys selects the rotates, move, etc. commands
+
+
+/******************************  **********************************/
+
+RIght clicking in the hierachry, you can create an empty GameObject and start oragnizing stuff under 
+that thing.
+
+
+
+
+
+
+
+
