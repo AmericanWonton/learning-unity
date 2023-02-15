@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
 {
+    public GameObject titleScreen;
     public Button restartButton;
     public bool isGameActive;
     public TextMeshPro gameOverText;
@@ -17,11 +18,12 @@ public class Game_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
+
+        //isGameActive = true;
         /* Display the Score */
-        score = 0;
-        UpdateScore(0);
-        StartCoroutine(SpawnTarget());
+        //score = 0;
+        //UpdateScore(0);
+        //StartCoroutine(SpawnTarget());
         //gameOverText.gameObject.SetActive(true);
     }
 
@@ -29,6 +31,18 @@ public class Game_Manager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    /* This actually starts the game when the buttons are clicked */
+    public void StartGame(int theDifficulty)
+    {
+        isGameActive = true;
+        score = 0;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+        titleScreen.gameObject.SetActive(false);
+        /* Set spawn rate based on difficulty */
+        spawnRate /= theDifficulty;
     }
 
     /* Creates condition for losing the game */
