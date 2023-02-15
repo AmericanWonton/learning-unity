@@ -22,6 +22,8 @@ public class DestroyOutOfBounds : MonoBehaviour
         } else if (transform.position.z < lowerBoundry)
         {
             Destroy(gameObject);
+            //This is how you log in Unity...it shows up in the bottom left Corner
+            Debug.Log("Game Over!");
         }
         else
         {
