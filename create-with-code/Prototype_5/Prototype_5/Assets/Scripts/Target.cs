@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public ParticleSystem explosionParticle;
+    public int pointValue;
+    private Game_Manager game_Manager;
     private float minSpeed = 12f;
     private float maxSpeed = 16f;
     private float maxTorque = 10f;
@@ -13,6 +16,7 @@ public class Target : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        game_Manager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
         targetrb = GetComponent<Rigidbody>();
         targetrb.AddForce(RandomForce(), ForceMode.Impulse);
         /* This is used for the object rotation as they are flung */
@@ -48,6 +52,8 @@ public class Target : MonoBehaviour
     private void OnMouseDown() 
     {
         Destroy(gameObject);
+        game_Manager.UpdateScore(pointValue);
+        Instantiate(explosionParticle, transform.position,explosionParticle.transform.rotation);
     }
 
     /* Destroys object when it leaves the scene. These will get caught by the Sensor below the scene */
